@@ -16,6 +16,19 @@ The Mysterious Island
 
 This is a git repository of the source files for the book The Mysterious Island by Verne, Jules, 1828-1905. This book is in the Public Domain, see the LICENSE file for details.
 
+ASCIIDOC conversion
+===================
+
+I ran the following on the 1268-h.htm file to auto-generate 1268.asciidoc.
+
+
+    vim
+        %s/°/\&#176;/g
+    iconf -t UTF-8 1268-h.htm > utf8.html
+    pandoc -f html -t asciidoc -o ../1268.asciidoc utf8.html
+            ^ from  ^ to        ^ output as        ^ sourcefile
+
+
 Found an error?
 ===============
 If you find an error in a book in GITenberg, you can report it by clicking the Issues tab in this book’s repository. Please copy-and-paste the entire sentence that contains the error, and what the text should read. For advanced users, you can make a Pull Request on Github.  For more information and how to get involved see the CONTRIBUTING_ section of the GITenberg website.
